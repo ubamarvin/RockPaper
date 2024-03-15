@@ -6,8 +6,15 @@ let playerScore = 0;
 let computerScore = 0;
 
 function getUserChoice () {
-    userChoice = prompt("Enter either Rock paper or Scissor");
-    return userChoice.toLocaleLowerCase();
+    let userChoice;
+    while (true) {
+        userChoice = prompt("Enter either Rock paper or Scissor").toLowerCase();
+        if (rockPaperScissor.includes(userChoice))
+            return userChoice;
+        else
+            alert("your input is illlegol");
+    }
+
 }
 function getComputerChoice() {
     let randomIndex = Math.floor(Math.random()*rockPaperScissor.length);
